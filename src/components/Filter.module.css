@@ -1,0 +1,12 @@
+.filter_name {
+color: rgb(17, 17, 92);
+margin-top: 50px;
+}
+
+.input {
+ background-color: rgb(246, 240, 232);
+ width: 280px;
+ height: 30px;
+ padding: 0;
+ margin-bottom: 50px;
+ }

@@ -1,0 +1,22 @@
+.main_section {
+ width: 200px;
+}
+
+
+.title_next {
+color: rgb(17, 17, 92);
+margin-top: 0;
+
+}
+
+.section {
+ display: flex;
+ /* flex-direction: column; */
+ gap: 8px;
+ justify-content: space-between;
+ margin-bottom: 8px;
+}
+
+.delete_btn {
+ margin: 0;
+}

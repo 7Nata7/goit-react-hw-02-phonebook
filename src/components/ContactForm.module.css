@@ -1,0 +1,37 @@
+form {
+ display: flex;
+ flex-direction: column;
+ gap: 5px;
+}
+
+
+.title_main{
+color: rgb(17, 17, 92);
+}
+
+.label {
+ color: rgb(29, 29, 152);
+font-weight: 700;
+margin-bottom: 5px;
+}
+
+.input {
+background-color: bisque;
+width: 280px;
+height: 30px;
+padding: 0;
+}
+
+button {
+ display: block;
+ margin-top: 20px;
+ background-color: rgb(17, 17, 92);
+ color: bisque;
+}
+
+.add_btn {
+ width: 284px;
+ height: 34px;
+margin-left: 0;
+/* padding: 1px 2px; */
+}
