@@ -75,5 +75,5 @@ ContactForm.propTypes = {
   title: PropTypes.string.isRequired,
   onAddContact: PropTypes.func.isRequired,
   contacts: PropTypes.arrayOf(PropTypes.object).isRequired,
-  alert: PropTypes.bool.isRequired,
+  alert: PropTypes.bool,
 };

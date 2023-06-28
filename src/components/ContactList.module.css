@@ -11,7 +11,6 @@ margin-top: 0;
 
 .section {
  display: flex;
- /* flex-direction: column; */
  gap: 8px;
  justify-content: space-between;
  margin-bottom: 8px;

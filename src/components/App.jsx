@@ -14,7 +14,6 @@ export class App extends React.Component {
       { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
     ],
     filter: '',
-    alert: false, 
   };
 
   onRemoveContact = (contactId) => {
