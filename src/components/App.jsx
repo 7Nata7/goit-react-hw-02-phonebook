@@ -24,8 +24,7 @@ export class App extends React.Component {
 
   onAddContact = (name, number) => {
     if (this.state.contacts.some((contact) => contact.name === name)) {
-      this.setState({ alert: true });
-      return;
+      return alert(`${name} already exists in contacts.`);
     }
 
     const newContact = {
@@ -36,7 +35,6 @@ export class App extends React.Component {
 
     this.setState((prevState) => ({
       contacts: [...prevState.contacts, newContact],
-      alert: false,
     }));
   };
 
@@ -54,8 +52,6 @@ export class App extends React.Component {
         <ContactForm
           title="Phone Book"
           onAddContact={this.onAddContact}
-          contacts={this.state.contacts}
-          alert={this.state.alert}
         />
 
         <Filter

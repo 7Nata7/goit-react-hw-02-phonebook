@@ -18,11 +18,6 @@ export default class ContactForm extends React.Component {
     event.preventDefault();
     const { name, number } = this.state;
 
-    if (this.props.contacts.some((contact) => contact.name === name)) {
-      alert(`${name} already exists in contacts.`);
-      return;
-    }
-
     this.props.onAddContact(name, number);
 
     this.setState({
@@ -74,6 +69,4 @@ export default class ContactForm extends React.Component {
 ContactForm.propTypes = {
   title: PropTypes.string.isRequired,
   onAddContact: PropTypes.func.isRequired,
-  contacts: PropTypes.arrayOf(PropTypes.object).isRequired,
-  alert: PropTypes.bool,
 };
