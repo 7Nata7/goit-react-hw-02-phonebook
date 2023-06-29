@@ -1,9 +1,9 @@
 import css from './Filter.module.css';
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 export default class Filter extends React.Component {
-  handleFilterChange = (event) => {
+  handleFilterChange = event => {
     const searchQuery = event.target.value;
     this.props.onFilterChange(searchQuery);
   };
@@ -11,10 +11,13 @@ export default class Filter extends React.Component {
   render() {
     return (
       <div>
+        <h2 className={css.filter_name}>{this.props.title}</h2>
         <label>
-          <h2 className={css.filter_name}>{this.props.title}</h2>
-          <input className={css.input}
-          type="text" onChange={this.handleFilterChange} />
+          <input
+            className={css.input}
+            type="text"
+            onChange={this.handleFilterChange}
+          />
         </label>
       </div>
     );

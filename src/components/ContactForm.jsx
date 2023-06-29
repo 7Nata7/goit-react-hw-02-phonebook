@@ -1,28 +1,28 @@
-import css from './ContactForm.module.css'
-import React from "react";
-import PropTypes from "prop-types";
+import css from './ContactForm.module.css';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 export default class ContactForm extends React.Component {
   state = {
-    name: "",
-    number: "",
+    name: '',
+    number: '',
   };
 
-  handleInputChange = (event) => {
+  handleInputChange = event => {
     this.setState({
       [event.target.name]: event.target.value,
     });
   };
 
-  handleSubmit = (event) => {
+  handleSubmit = event => {
     event.preventDefault();
     const { name, number } = this.state;
 
     this.props.onAddContact(name, number);
 
     this.setState({
-      name: "",
-      number: "",
+      name: '',
+      number: '',
     });
   };
 
@@ -30,12 +30,13 @@ export default class ContactForm extends React.Component {
     const { name, number } = this.state;
 
     return (
-      <div >
+      <div>
         <h1 className={css.title_main}>{this.props.title}</h1>
         <form className={css.section} onSubmit={this.handleSubmit}>
           <label>
             <p className={css.label}>Name</p>
-            <input className={css.input}
+            <input
+              className={css.input}
               onChange={this.handleInputChange}
               value={name}
               type="text"
@@ -47,7 +48,8 @@ export default class ContactForm extends React.Component {
           </label>
           <label>
             <p className={css.label}>Number</p>
-            <input className={css.input}
+            <input
+              className={css.input}
               onChange={this.handleInputChange}
               value={number}
               type="tel"
@@ -57,10 +59,10 @@ export default class ContactForm extends React.Component {
               required
             />
           </label>
-          <button className={css.add_btn}
-          type="submit">Add contact</button>
+          <button className={css.add_btn} type="submit">
+            Add contact
+          </button>
         </form>
-        {this.props.alert && <p>is already in contacts</p>}
       </div>
     );
   }

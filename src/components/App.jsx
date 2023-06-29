@@ -1,8 +1,8 @@
-import React from "react";
-import css from './App.module.css'
-import ContactForm from "./ContactForm";
-import ContactList from "./ContactList";
-import Filter from "./Filter";
+import React from 'react';
+import css from './App.module.css';
+import ContactForm from './ContactForm';
+import ContactList from './ContactList';
+import Filter from './Filter';
 import { nanoid } from 'nanoid';
 
 export class App extends React.Component {
@@ -16,15 +16,19 @@ export class App extends React.Component {
     filter: '',
   };
 
-  onRemoveContact = (contactId) => {
+  onRemoveContact = contactId => {
     this.setState({
-      contacts: this.state.contacts.filter((contact) => contact.id !== contactId),
+      contacts: this.state.contacts.filter(contact => contact.id !== contactId),
     });
   };
 
   onAddContact = (name, number) => {
-    if (this.state.contacts.some((contact) => contact.name === name)) {
-      return alert(`${name} already exists in contacts.`);
+    if (
+      this.state.contacts.some(
+        contact => contact.name.toLowerCase() === name.toLowerCase() || contact.number === number
+      )
+    ) {
+      return alert(`${name} OR ${number} exists in contacts.`);
     }
 
     const newContact = {
@@ -33,26 +37,23 @@ export class App extends React.Component {
       number,
     };
 
-    this.setState((prevState) => ({
+    this.setState(prevState => ({
       contacts: [...prevState.contacts, newContact],
     }));
   };
 
-  handleFilterChange = (searchQuery) => {
+  handleFilterChange = searchQuery => {
     this.setState({ filter: searchQuery });
   };
 
   render() {
-    const filteredContacts = this.state.contacts.filter((contact) =>
+    const filteredContacts = this.state.contacts.filter(contact =>
       contact.name.toLowerCase().includes(this.state.filter.toLowerCase())
     );
 
     return (
       <div className={css.main_section}>
-        <ContactForm
-          title="Phone Book"
-          onAddContact={this.onAddContact}
-        />
+        <ContactForm title="Phone Book" onAddContact={this.onAddContact} />
 
         <Filter
           title="Find contacts by name"

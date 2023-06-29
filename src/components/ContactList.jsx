@@ -1,12 +1,12 @@
-import css from "./ContactList.module.css";
-import React from "react";
-import PropTypes from "prop-types";
+import css from './ContactList.module.css';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const ContactList = ({ title, contacts, onRemoveContact }) => {
   return (
     <div>
       <h2 className={css.title_next}>{title}</h2>
-      {contacts.map((contact) => (
+      {contacts.map(contact => (
         <div className={css.section} key={contact.id}>
           {contact.name}: {contact.number}
           <button
