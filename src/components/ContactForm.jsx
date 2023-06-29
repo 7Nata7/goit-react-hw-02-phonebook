@@ -1,14 +1,14 @@
-import css from './ContactForm.module.css';
-import React from 'react';
-import PropTypes from 'prop-types';
+import css from './ContactForm.module.css'
+import React from "react";
+import PropTypes from "prop-types";
 
 export default class ContactForm extends React.Component {
   state = {
-    name: '',
-    number: '',
+    name: "",
+    number: "",
   };
 
-  handleInputChange = event => {
+  handleInputChange = (event) => {
     this.setState({
       [event.target.name]: event.target.value,
     });
@@ -25,6 +25,7 @@ export default class ContactForm extends React.Component {
       number: '',
     });
   };
+
 
   render() {
     const { name, number } = this.state;
