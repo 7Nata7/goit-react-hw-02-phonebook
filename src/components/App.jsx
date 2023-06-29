@@ -24,7 +24,7 @@ export class App extends React.Component {
 
   onAddContact = (name, number) => {
     if (
-      this.state.contacts.some(
+      this.state.contacts.find(
         contact => contact.name.toLowerCase() === name.toLowerCase() || contact.number === number
       )
     ) {
