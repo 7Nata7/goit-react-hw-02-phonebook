@@ -52,7 +52,6 @@ componentDidMount() {
   const contacts = JSON.parse(stringifiedContacts) ?? [];
 
   this.setState({ contacts });
-  console.log("app done");
 };
 
 componentDidUpdate(prevProps, prevState) {
