@@ -47,21 +47,27 @@ export class App extends React.Component {
     this.setState({ filter: searchQuery });
   };
 
+// componentDidMount() {
+//   const stringifiedContacts = localStorage.getItem('contacts');
+//   const contacts = JSON.parse(stringifiedContacts) ?? [];
+
+//   this.setState({ contacts });
+// };
+
 componentDidMount() {
   const stringifiedContacts = localStorage.getItem('contacts');
-  const contacts = JSON.parse(stringifiedContacts) ?? [];
-
-  this.setState({ contacts });
-};
+  const contacts = JSON.parse(stringifiedContacts)
+if(contacts ){
+ this.setState({ contacts });
+}
+}
 
 componentDidUpdate(prevProps, prevState) {
   if (prevState.contacts !== this.state.contacts) {
-  }
-  if(prevState.contacts.length !== this.state.contacts.length) {
-    const stringifiedContacts = JSON.stringify(this.state.contacts);
+ const stringifiedContacts = JSON.stringify(this.state.contacts);
     localStorage.setItem('contacts', stringifiedContacts);
   }
-};
+}
 
   render() {
     const filteredContacts = this.state.contacts.filter((contact) =>
